@@ -1,0 +1,30 @@
+<html>
+<head>
+ <title> Operaciones con numeros</title>
+</head>
+<body>
+	<h1> AREA DE UN TRIANGULO </h1>
+		<form name = "formulario2"> 
+		Base del triangulo: <input type = "text" id="base" /> <br/>
+		Altura del triangulo: <input type= "text" id="altura" /> <br/>
+		resultado: <input type = "text" id = "re" /> <br/>
+		
+		
+		<input type = "button" value = "calcular" onclick="calcular()"> 
+		<script languaje="javascript">
+
+		var base , altura , area ;
+		var opc ;
+
+		function calcular()
+		{
+			base = parseInt( document.formulario2.base.value ) ;
+			altura =  parseInt( document.formulario2.altura.value ) ;
+			area = base * altura / 2;
+			document.formulario2.re.value = area ;
+		}
+
+	</script>
+</form>
+</body>
+</html>

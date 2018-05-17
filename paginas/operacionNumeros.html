@@ -1,0 +1,112 @@
+</head>
+<body>
+	<h1> OPERACIONES </h1>
+		<form name = "formulario2"> 
+		Numero 1: <input type = "text" id="n1" /> <br/>
+		Numero 2: <input type= "text" id="n2" /> <br/>
+		Numero 3: <input type = "text" id = "n3" /> <br/>
+		Numero 4: <input type = "text" id = "n4" /> <br/>
+		Numero 5: <input type = "text" id = "n5" /> <br/>
+
+		resultado: <input type = "text" id = "resultado" /> <br/> 
+		
+		
+		<input type = "button" value = "calcular" onclick="calcular()"> 
+
+		<select name = "opcion">
+			<option  value = "1" > Mayor </option> 
+			<option  value = "2" > Menor </option> 
+			<option  value = "3" >  Cant. Pares </option> 
+			<option  value = "4" > Cant. Impares </option> 
+			<option  value = "5" > Promedio </option> 
+		</select> 
+
+		
+		<script languaje="javascript">
+
+
+		
+
+		var num1 , num2 , num3 , num4 , num5 , arrayNumeros ,contPares , contImpares; 
+		var mayor , menor , cantidadImpares , cantidadPares  , promedio , Resultado ; 
+		var opc ; 
+
+		function calcular()
+		{
+			num1 = parseInt( document.formulario2.n1.value ) ;
+			num2 = parseInt( document.formulario2.n2.value ) ;
+			num3 = parseInt( document.formulario2.n3.value ) ;
+			num4 = parseInt( document.formulario2.n4.value ) ;
+			num5 = parseInt( document.formulario2.n5.value ) ;
+			opc = document.formulario2.opcion.value;
+			
+			arrayNumeros = [ num1 , num2 , num3 ,num4 , num5 ];
+			mayor = 0 ;
+			contImpares = 0 ;
+			contPares = 0 ;
+			suma = 0 ;
+			var i;
+			switch(opc)
+			{
+				case "1" :
+				
+					for (i = 0; i < arrayNumeros.length; i++) 
+					{ 
+				    	if (arrayNumeros[i] > mayor )
+				    		mayor = arrayNumeros[i];
+				    }
+					document.formulario2.resultado.value = mayor ;
+					break;
+
+				case "2":
+
+					menor = num5 ;
+
+					for (i = 0; i < arrayNumeros.length; i++) 
+					{ 
+				    	if (arrayNumeros[i]  < menor )
+				    		menor = arrayNumeros[i];
+					}
+					document.formulario2.resultado.value = menor ;
+					break;
+
+				case "3":
+
+					for (i = 0; i < arrayNumeros.length; i++) 
+					{ 
+				    	if (arrayNumeros[i] % 2 == 0 )
+				    		contPares ++ ;
+					}
+					document.formulario2.resultado.value = contPares ;
+					break ;
+				case "4":
+
+					for (i = 0; i < arrayNumeros.length; i++) 
+					{ 
+				    	if (arrayNumeros[i] % 2 != 0 )
+				    		contImpares ++ ;
+					}
+					document.formulario2.resultado.value = contImpares ;
+					break;
+
+				case "5":
+
+					for (i = 0; i < arrayNumeros.length; i++) 
+					{ 
+				    	suma += arrayNumeros[i]; 
+				    	promedio = suma / 5 ;
+					}
+					document.formulario2.resultado.value = promedio ;
+					break;
+
+				
+			}
+
+
+			document.formulario2.re.value = area ;
+		}
+
+	</script>
+</form>
+</body>
+</html>

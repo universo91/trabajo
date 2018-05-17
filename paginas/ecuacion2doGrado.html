@@ -1,0 +1,55 @@
+</head>
+<body>
+	<h1> AREA DE UN TRIANGULO </h1>
+		<form name = "formulario2"> 
+		Ingrese a : <input type = "text" id="a" /> <br/>
+		Ingrese b : <input type= "text" id="b" /> <br/>
+		Ingrese c : <input type = "text" id = "c" /> <br/>
+		Raiz1 : <input type = "text" id = "R1" /> <br/>
+		Raiz2 : <input type = "text" id = "R2" /> <br/>
+
+		
+		
+		<input type = "button" value = "calcular" onclick="calcular()"> 
+		<script languaje="javascript">
+
+		var a , b , c , discriminante , R1 , R2;
+		var opc ;
+
+		function calcular()
+		{
+			a = parseFloat( document.formulario2.a.value ) ;
+			b =  parseFloat( document.formulario2.b.value ) ;
+			c =  parseFloat( document.formulario2.c.value ) ;
+
+			discriminante = Math.pow(b,2)-4*a*c ;
+			
+			document.formulario2.R1.value = "" ;
+			document.formulario2.R2.value = "" ;
+
+			if( discriminante < 0 )
+			{				
+				alert("La raiz es un numero complejo");
+			}
+			else if (discriminante == 0 )
+			{
+				R1 = -b/2*a;
+						
+				document.formulario2.R1.value = R1 ;
+
+			}
+			else if (discriminante > 0 ){
+				
+				R1 = (-b + Math.sqrt(discriminante)) / 2 * a ;
+				R2 = (-b - Math.sqrt(discriminante)) / 2 * a ;
+				document.formulario2.R1.value = R1 ;
+				document.formulario2.R2.value = R2 ; 
+			}
+
+			
+		}
+
+	</script>
+</form>
+</body>
+</html>
